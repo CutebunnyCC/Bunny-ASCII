@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bunny ASCII Gallery 🐰</title>
+  <style>
+    body {
+      font-family: "Courier New", monospace;
+      background: #fffafc;
+      color: #333;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #d48ac2;
+    }
+    .bunny-box {
+      background: #fff0f5;
+      border: 2px dashed #d48ac2;
+      padding: 1rem;
+      margin: 1rem 0;
+      position: relative;
+      white-space: pre;
+    }
+    button.copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ffd9ec;
+      border: none;
+      padding: 0.5rem;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      margin-top: 1rem;
+      padding: 1rem;
+      font-family: "Courier New", monospace;
+      border: 2px solid #d48ac2;
+      background: #fff0f5;
+      resize: vertical;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🐰 Bunny ASCII Gallery 🐰</h1>
+
+  <div class="bunny-box" id="bunny1">
+    (\__/)
+    (•ㅅ•)
+    / 　 づ
+    <button class="copy-btn" onclick="copyText('bunny1')">Copy</button>
+  </div>
+
+  <div class="bunny-box" id="bunny2">
+    (\_._/)
+    ( o.o )
+    > ^ <
+    <button class="copy-btn" onclick="copyText('bunny2')">Copy</button>
+  </div>
+
+  <h2>Add Your Own Bunny:</h2>
+  <textarea placeholder="Paste your own bunny ASCII art here..."></textarea>
+
+  <script>
+    function copyText(id) {
+      const box = document.getElementById(id);
+      const text = box.innerText.trim();
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Copied!");
+      });
+    }
+  </script>
+
+</body>
+</html>
